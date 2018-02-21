@@ -10,6 +10,8 @@ public class AppConfig {
     public static String hostname = "app/";
     public static String admin_select_branches ="";
 
+    public static String admin_login_url ="admin-login-processor.php";
+
 
     public static String selected_branch_id;
     public static String[] branchNames;

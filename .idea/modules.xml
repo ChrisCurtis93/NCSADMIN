@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/NCSADMIN.iml" filepath="$PROJECT_DIR$/NCSADMIN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/NCSADMIN.iml" filepath="$PROJECT_DIR$/.idea/NCSADMIN.iml" />
+      <module fileurl="file://D:\roy stuff\android projects\NCSADMIN\NCSADMIN.iml" filepath="D:\roy stuff\android projects\NCSADMIN\NCSADMIN.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\roy stuff\android projects\NCSADMIN\app\app.iml" filepath="D:\roy stuff\android projects\NCSADMIN\app\app.iml" />
     </modules>
   </component>
 </project>
