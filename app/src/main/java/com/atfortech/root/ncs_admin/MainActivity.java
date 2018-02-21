@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         select_branch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new BranchSelection().execute();
+                 new BranchSelection().execute();
             }
         });
 
