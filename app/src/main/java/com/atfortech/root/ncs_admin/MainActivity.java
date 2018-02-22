@@ -1,16 +1,21 @@
 package com.atfortech.root.ncs_admin;
 
 import android.os.AsyncTask;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomSheetBehavior;
+import android.support.design.widget.BottomSheetDialog;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -23,6 +28,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView todays, month, all;
@@ -30,21 +39,26 @@ public class MainActivity extends AppCompatActivity {
     ListView listView;
     CardView cardView;
 
+
     List<ViewSalesInterface> branchDetails;
 
     public static String tod,mon,al;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
+
 
         todays = (TextView) findViewById(R.id.total_today_sale);
         month = (TextView) findViewById(R.id.total_month_sale);
         all = (TextView) findViewById(R.id.total_all_sales);
         select_branch = (Button) findViewById(R.id.select);
         click_details = (Button) findViewById(R.id.view_details);
+
 
 
         select_branch.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
                 BranchSelect();
             }
         });
+
+
 
     }
 
@@ -86,6 +102,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+@OnClick(R.id.view_details)
+public void showBottomSheetDialog() {
+    View view = getLayoutInflater().inflate(R.layout.bottomsheet_details, null);
+
+    BottomSheetDialog dialog = new BottomSheetDialog(this);
+    dialog.setContentView(view);
+    dialog.show();
+}
 
 
     public class ViewSale extends AsyncTask<String,String,String>{
