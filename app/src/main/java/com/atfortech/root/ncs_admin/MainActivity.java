@@ -95,8 +95,6 @@ public class MainActivity extends AppCompatActivity {
                 new ViewSale().execute();
                 alertDialog.cancel();
 
-
-
             }
         });
 
