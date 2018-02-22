@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
@@ -36,13 +37,15 @@ public class Login extends AppCompatActivity {
         userpwd=findViewById(R.id.password_admin);
         login=findViewById(R.id.log);
 
-        stremail=usermail.getText().toString();
-        strpassword=userpwd.getText().toString();
+
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stremail=usermail.getText().toString();
+                strpassword=userpwd.getText().toString();
                 new LoadData().execute();
+
             }
         });
 
@@ -94,8 +97,14 @@ public class Login extends AppCompatActivity {
         protected void onPostExecute(String s){
             super.onPostExecute(s);
 
+            if (success==1){
+
+                startActivity(new Intent(Login.this,MainActivity.class));
+            }else {
+                Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
+            }
+
             progressDialog.cancel();
-            startActivity(new Intent(Login.this,MainActivity.class));
         }
     }
 
