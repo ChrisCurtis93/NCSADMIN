@@ -2,6 +2,8 @@ package com.atfortech.root.ncs_admin;
 
 import android.app.DownloadManager;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
@@ -249,6 +251,26 @@ public void showBottomSheetDialog() {
 
         DownloadManager manager = (DownloadManager)this.getSystemService(Context.DOWNLOAD_SERVICE);
         manager.enqueue(request);
+    }
+    public void onBackPressed(){
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+
+        alertDialog.setMessage((CharSequence) "Are you sure you want to log out?");
+        alertDialog.setPositiveButton((CharSequence) "Yes", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent = new Intent(MainActivity.this, Login.class);
+                startActivity(intent);
+
+                finish();
+            }
+        });
+        alertDialog.setNegativeButton((CharSequence) "No", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        alertDialog.show();
+
     }
 }
 
