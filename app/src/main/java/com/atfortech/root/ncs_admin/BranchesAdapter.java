@@ -1,6 +1,7 @@
 package com.atfortech.root.ncs_admin;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ public class BranchesAdapter extends BaseAdapter {
 
     String[] branch;
     Context context;
+    CardView cardView;
 
     public static LayoutInflater inflater= null ;
 
@@ -50,6 +52,7 @@ public class BranchesAdapter extends BaseAdapter {
 
         view=inflater.inflate(R.layout.branch_list_item,null);
         TextView branchtxt=(TextView)view.findViewById(R.id.branch);
+        cardView=view.findViewById(R.id.list_card);
 
         branchtxt.setText(branch[i]);
 

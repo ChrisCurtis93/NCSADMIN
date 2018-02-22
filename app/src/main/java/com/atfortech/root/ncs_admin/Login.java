@@ -42,10 +42,14 @@ public class Login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                stremail=usermail.getText().toString();
-                strpassword=userpwd.getText().toString();
-                new LoadData().execute();
+                stremail = usermail.getText().toString();
+                strpassword = userpwd.getText().toString();
+                if (stremail == null || strpassword == null) {
+                    Toast.makeText(getApplicationContext(), "fill all boxes", Toast.LENGTH_SHORT).show();
+                } else {
+                    new LoadData().execute();
 
+                }
             }
         });
 

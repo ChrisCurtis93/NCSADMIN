@@ -79,13 +79,13 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Total Daily Paid Sales"
+                    android:text="Today's Sale"
                     android:textStyle="bold"
                     android:textColor="#000"
                     android:textSize="18sp"/>
 
                 <TextView
-                    android:id="@+id/d_psales"
+                    android:id="@+id/total_today_sale"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="0"
@@ -115,12 +115,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Total Daily Unpaid Sales"
+                    android:text="Month Sale"
                     android:textStyle="bold"
                     android:textColor="#000"
                     android:textSize="18sp"/>
                 <TextView
-                    android:id="@+id/d_usales"
+                    android:id="@+id/total_month_sale"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="0"
@@ -152,12 +152,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Monthly Sales"
+                    android:text="All Sales"
                     android:textStyle="bold"
                     android:textColor="#000"
                     android:textSize="18sp"/>
                 <TextView
-                    android:id="@+id/d_msales"
+                    android:id="@+id/total_all_sales"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="0"

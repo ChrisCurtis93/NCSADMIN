@@ -11,9 +11,11 @@ public class AppConfig {
     public static String admin_select_branches ="";
 
     public static String admin_login_url ="admin-login-processor.php";
+    public static String get_today_sales ="admin-get-branch-sales.php";
 
 
      public static String selected_branch_id;
+     public static String selected_branch_name;
     public static String[] branchNames;
     public static String[] branchIds;
 
