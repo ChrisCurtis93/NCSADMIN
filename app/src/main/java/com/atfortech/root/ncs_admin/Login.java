@@ -65,6 +65,8 @@ public class Login extends AppCompatActivity {
             super.onPreExecute();
             progressDialog.setMessage("Authenticating. Please Wait...");
             progressDialog.setCancelable(false);
+
+            progressDialog.show();
         }
 
         @Override
@@ -82,14 +84,18 @@ public class Login extends AppCompatActivity {
                 success=jsonObject.getInt("success");
                 data=jsonObject.getJSONArray("branches");
 
-                AppConfig.branchIds=new String[data.length()];
-                AppConfig.branchNames=new String[data.length()];
+                if(success==1){
+                    AppConfig.branchIds=new String[data.length()];
+                    AppConfig.branchNames=new String[data.length()];
 
-                for (int i=0;i<data.length();i++){
-                    JSONObject jobj=data.getJSONObject(i);
-                     AppConfig.branchNames[i]=jobj.getString("branch_name");
-                     AppConfig.branchIds[i]=jobj.getString("branch_id");
+                    for (int i=0;i<data.length();i++){
+                        JSONObject jobj=data.getJSONObject(i);
+                        AppConfig.branchNames[i]=jobj.getString("branch_name");
+                        AppConfig.branchIds[i]=jobj.getString("branch_id");
+                    }
                 }
+
+
             }catch (Exception e){
                 e.printStackTrace();
             }
